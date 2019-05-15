@@ -1,11 +1,14 @@
 {
   "name": "cross-vars",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Cross platform environment variables in npm scripts",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zharkov-eu/cross-vars.git"
+  },
+  "bin": {
+    "cross-vars": "bin/cross-vars.js"
   },
   "scripts": {
     "release": "node index.js git commit -am $npm_package_version && node index.js git tag $npm_package_version && git push && git push --tags && npm publish"
