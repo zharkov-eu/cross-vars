@@ -1,0 +1,28 @@
+{
+  "name": "cross-vars",
+  "version": "1.0.0",
+  "description": "Cross platform environment variables in npm scripts",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zharkov-eu/cross-vars.git"
+  },
+  "scripts": {
+    "release": "node index.js git commit -am $npm_package_version && node index.js git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "keywords": [
+    "cross",
+    "environment",
+    "variables",
+    "vars"
+  ],
+  "author": "Evgeni Zharkov <zharkov.ev.u@yandex.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zharkov-eu/cross-vars/issues"
+  },
+  "homepage": "https://github.com/zharkov-eu/cross-vars#readme",
+  "dependencies": {
+    "cross-spawn": "^6.0.5"
+  }
+}
