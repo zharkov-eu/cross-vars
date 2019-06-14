@@ -8,11 +8,12 @@
 var spawn = require("cross-spawn");
 
 function substitute(args) {
-  var regexp = /^\$(.+)|^%(.+)%$/;
+  var regexp = /\$([a-zA-Z_]+[a-zA-Z0-9_]+)/g;
 
-  return args.map((arg) => {
-    var match = arg.match(regexp);
-    return match ? process.env[match[1] || match[2]] : arg;
+  return args.map(function (arg) {
+    return arg.replace(regexp, function (match) {
+      return process.env[match.slice(1)];
+    });
   });
 }
 
